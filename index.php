@@ -27,9 +27,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="ejercicio4.php">Ejercicio4</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ejercicio5.php">Ejercicio5</a>
-                </li>
             </ul>
         </div>
     </nav>
