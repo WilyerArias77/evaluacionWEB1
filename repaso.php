@@ -42,18 +42,48 @@
             <div class="row justify-content-center">
 
                 <div class="col-4">
-                    <form class="mt-5">
-                      <h4 class="text-center">Orden de compra</h4>
-                        <div class="row">
-                          <div class="col">
-                            <input type="text" class="form-control" placeholder="Producto1">
+                      <form class="mt-5" action="repaso.php" method="POST">
+                        <h4 class="text-center">Orden de compra</h4>
+                          <div class="row">
+                              <div class="col">
+                                <input type="text" class="form-control" placeholder="Producto1" name="producto1">
+                              </div>
+                            <div class="col">
+                              <input type="number" class="form-control" placeholder="Precio1" name="precio1">
+                            </div>
+                            <div class="col">
+                              <select class="form-control" name="operacion">
+                                <option value="1">suma</option>
+                                <option value="2">resta</option>
+                                <option value="3">multiplicacion</option>
+                                <option value="4">division</option>
+                              </select>
+
+                            </div>
+
                           </div>
-                          <div class="col">
-                            <input type="number" class="form-control" placeholder="Precio1">
-                          </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-5">Submit</button>
-                     </form>
+                          <button type="submit" class="btn btn-primary mt-5" name="calcular">Submit</button>
+                      </form>
+
+                      <?php if(isset($_POST["calcular"])):?>
+                          
+                            <h4 > 
+                            
+                                <?php 
+                                  
+                                  $productoA=$_POST["producto1"];
+                                  $precioA=$_POST["precio1"];
+                                  $costoEnvio=8000;
+                                  $total=$precioA+$costoEnvio;
+                                  echo("El total es de: ".$total);
+                                                             
+                                ?> 
+                            </h4>
+                          
+                      <?php endif?>
+
+
+
                 </div>
         
             </div>
